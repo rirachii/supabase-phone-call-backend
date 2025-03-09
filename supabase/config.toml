@@ -1,0 +1,76 @@
+# Supabase CLI Configuration
+
+# Project ID - replace with your own project ID
+# project_id = "your-project-id"
+
+[api]
+# API schema - IMPORTANT: don't change unless you know what you're doing
+schema = "public"
+extra_schemas = ["extensions", "storage"]
+
+[db]
+# Database port
+port = 5432
+# Database major version
+major_version = 15
+# Database shadow/replica port - used for migrations
+shadow_port = 5433
+
+[studio]
+# Studio port
+port = 8000
+
+[functions]
+# Function serving port
+serve_port = 54321
+
+# Function environment variables
+[functions.process-call-queue.envs]
+# Supabase
+SUPABASE_URL = "env:SUPABASE_URL"
+SUPABASE_ANON_KEY = "env:SUPABASE_ANON_KEY"
+SUPABASE_SERVICE_ROLE_KEY = "env:SUPABASE_SERVICE_ROLE_KEY"
+# VAPI
+VAPI_API_KEY = "env:VAPI_API_KEY"
+# App config
+MAX_CONCURRENT_CALLS = "env:MAX_CONCURRENT_CALLS"
+
+[functions.vapi-webhook.envs]
+# Supabase
+SUPABASE_URL = "env:SUPABASE_URL"
+SUPABASE_ANON_KEY = "env:SUPABASE_ANON_KEY"
+SUPABASE_SERVICE_ROLE_KEY = "env:SUPABASE_SERVICE_ROLE_KEY"
+
+[functions.manage-subscriptions.envs]
+# Supabase
+SUPABASE_URL = "env:SUPABASE_URL"
+SUPABASE_ANON_KEY = "env:SUPABASE_ANON_KEY"
+SUPABASE_SERVICE_ROLE_KEY = "env:SUPABASE_SERVICE_ROLE_KEY"
+# Stripe
+STRIPE_SECRET_KEY = "env:STRIPE_SECRET_KEY"
+
+[functions.stripe-webhook.envs]
+# Supabase
+SUPABASE_URL = "env:SUPABASE_URL"
+SUPABASE_ANON_KEY = "env:SUPABASE_ANON_KEY"
+SUPABASE_SERVICE_ROLE_KEY = "env:SUPABASE_SERVICE_ROLE_KEY"
+# Stripe
+STRIPE_SECRET_KEY = "env:STRIPE_SECRET_KEY"
+STRIPE_WEBHOOK_SECRET = "env:STRIPE_WEBHOOK_SECRET"
+# App config
+FRONTEND_URL = "env:FRONTEND_URL"
+
+[functions.phone-number-management.envs]
+# Supabase
+SUPABASE_URL = "env:SUPABASE_URL"
+SUPABASE_ANON_KEY = "env:SUPABASE_ANON_KEY"
+SUPABASE_SERVICE_ROLE_KEY = "env:SUPABASE_SERVICE_ROLE_KEY"
+# Twilio
+TWILIO_ACCOUNT_SID = "env:TWILIO_ACCOUNT_SID"
+TWILIO_AUTH_TOKEN = "env:TWILIO_AUTH_TOKEN"
+
+[functions.voice-selection.envs]
+# Supabase
+SUPABASE_URL = "env:SUPABASE_URL"
+SUPABASE_ANON_KEY = "env:SUPABASE_ANON_KEY"
+SUPABASE_SERVICE_ROLE_KEY = "env:SUPABASE_SERVICE_ROLE_KEY"
